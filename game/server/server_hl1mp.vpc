@@ -1,0 +1,137 @@
+//-----------------------------------------------------------------------------
+//	SERVER_HL1MP.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\.."
+$Macro GAMENAME 	"hl1mp"
+
+$Include "$SRCDIR\game\server\server_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories	"$BASE;$SRCDIR\game\shared\hl1,$SRCDIR\game\shared\hl2,.\hl1,.\hl2"
+		$PreprocessorDefinitions		"$BASE;HL1_DLL;HL1MP_DLL"
+	}
+}
+
+$Project "Server (HL1MP)"
+{
+	$Folder	"Source Files"
+	{
+		$File	"basegrenade_concussion.cpp"
+		$File	"basegrenade_contact.cpp"
+		$File	"basegrenade_timed.cpp"
+
+		$Folder	"HL2 DLL"
+		{
+			$File	"hl2\ai_behavior_police.h"
+			$File	"hl2\ai_goal_police.h"
+			$File	"hl2\ai_interactions.h"
+			$File	"hl2\antlion_maker.h"
+			$File	"$SRCDIR\game\shared\hl2\citadel_effects_shared.h"
+			$File	"hl2\energy_wave.h"
+			$File	"$SRCDIR\game\shared\hl2\env_alyxemp_shared.h"
+			$File	"$SRCDIR\game\shared\hl2\hl2_shareddefs.h"
+			$File	"$SRCDIR\game\shared\hl2\hl_movedata.h"
+			$File	"hl2\npc_metropolice.h"
+			$File	"hl2\npc_playercompanion.h"
+			$File	"hl2\prop_combine_ball.h"
+			$File	"hl2\script_intro.h"
+			$File	"hl2\vehicle_crane.h"
+			$File	"hl2\weapon_crowbar.h"
+			$File	"hl2\weapon_physcannon.h"
+			$File	"hl2\weapon_stunstick.h"
+
+		}
+
+		$Folder	"HL1 DLL"
+		{
+			$File	"actanimating.cpp"
+			$File	"actanimating.h"
+			$File	"hl1\hl1_ai_basenpc.cpp"
+			$File	"hl1\hl1_ai_basenpc.h"
+			$File	"hl1\hl1_basegrenade.cpp"
+			$File	"hl1\hl1_basegrenade.h"
+			$File	"hl1_CBaseHelicopter.h"
+			$File	"hl1\hl1_ents.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1_gamerules.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_gamerules.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1_gamerules.h"
+			$File	"hl1\hl1_grenade_mp5.cpp"
+			$File	"hl1\hl1_grenade_mp5.h"
+			$File	"hl1\hl1_grenade_spit.cpp"
+			$File	"hl1\hl1_grenade_spit.h"
+			$File	"hl1\hl1_item_ammo.cpp"
+			$File	"hl1\hl1_item_battery.cpp"
+			$File	"hl1\hl1_item_healthkit.cpp"
+			$File	"hl1\hl1_item_longjump.cpp"
+			$File	"hl1\hl1_item_suit.cpp"
+			$File	"hl1\hl1_items.cpp"
+			$File	"hl1\hl1_items.h"
+			$File	"hl1\hl1_monstermaker.cpp"
+			$File	"hl1\hl1_monstermaker.h"
+			$File	"hl1\hl1_npc_aflock.cpp"
+			$File	"hl1\hl1_npc_agrunt.cpp"
+			$File	"hl1\hl1_npc_apache.cpp"
+			$File	"hl1\hl1_npc_barnacle.cpp"
+			$File	"hl1\hl1_npc_barnacle.h"
+			$File	"hl1\hl1_npc_barney.cpp"
+			$File	"hl1\hl1_npc_barney.h"
+			$File	"hl1\hl1_npc_bigmomma.cpp"
+			$File	"hl1\hl1_npc_bloater.cpp"
+			$File	"hl1\hl1_npc_bullsquid.cpp"
+			$File	"hl1\hl1_npc_bullsquid.h"
+			$File	"hl1\hl1_npc_controller.cpp"
+			$File	"hl1\hl1_npc_gargantua.cpp"
+			$File	"hl1\hl1_npc_gargantua.h"
+			$File	"hl1\hl1_npc_gman.cpp"
+			$File	"hl1\hl1_npc_hassassin.cpp"
+			$File	"hl1\hl1_npc_headcrab.cpp"
+			$File	"hl1\hl1_npc_headcrab.h"
+			$File	"hl1\hl1_npc_hgrunt.cpp"
+			$File	"hl1\hl1_npc_hgrunt.h"
+			$File	"hl1\hl1_npc_hornet.cpp"
+			$File	"hl1\hl1_npc_hornet.h"
+			$File	"hl1\hl1_npc_houndeye.cpp"
+			$File	"hl1\hl1_npc_houndeye.h"
+			$File	"hl1\hl1_npc_ichthyosaur.cpp"
+			$File	"hl1\hl1_npc_ichthyosaur.h"
+			$File	"hl1\hl1_npc_leech.cpp"
+			$File	"hl1\hl1_npc_nihilanth.cpp"
+			$File	"hl1\hl1_npc_osprey.cpp"
+			$File	"hl1\hl1_npc_roach.cpp"
+			$File	"hl1\hl1_npc_scientist.cpp"
+			$File	"hl1\hl1_npc_scientist.h"
+			$File	"hl1\hl1_npc_snark.cpp"
+			$File	"hl1\hl1_npc_snark.h"
+			$File	"hl1\hl1_npc_talker.cpp"
+			$File	"hl1\hl1_npc_talker.h"
+			$File	"hl1\hl1_npc_tentacle.cpp"
+			$File	"hl1\hl1_npc_turret.cpp"
+			$File	"hl1\hl1_npc_vortigaunt.cpp"
+			$File	"hl1\hl1_npc_vortigaunt.h"
+			$File	"hl1\hl1_npc_zombie.cpp"
+			$File	"hl1\hl1_npc_zombie.h"
+			$File	"hl1\hl1_weapon_snark.cpp"
+			$File	"hl1\hl1_weapon_tripmine.cpp"
+			$File	"hl1\hl1_weaponbox.cpp"
+			$File	"hl1\hl1mp_bot_temp.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_357.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_crossbow.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_egon.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_gauss.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_glock.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_handgrenade.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_hornetgun.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_mp5.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_rpg.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_sachel.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_shotgun.cpp"
+			$File	"$SRCDIR\game\server\hl1\hl1_weapon_crowbar.cpp"
+		}
+	}
+}
